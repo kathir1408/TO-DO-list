@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO-DO list</title>
+</head>
+<body>
+    <center>
+<input type="text" id="in">
+<button onclick="add()">Add</button>
+<table id="tab">
+  
+</table>
+<ol id="ul">
+  
+    
+</ol>
+</center>
+<style>
+    body{
+        background-image: url(todo1.jpg);
+       background-size: 100%;
+        background-repeat: no-repeat;
+    }
+    #in{
+        height: 40px;
+        width: 300px;
+        margin-top: 50px;
+        
+    }
+   table{
+   
+    padding-top: 10px;
+    padding-bottom: 15px;
+    padding-left: 20px;
+   }
+   #but {
+    height: 50px;
+   }
+
+</style>
+<script>
+    function add(){
+        var ul=document.getElementById("tab")
+        var i=document.getElementById("in")
+        var v1=document.createElement("tr")
+        var v3=document.createElement("td")
+        var v4=document.createElement("td")
+        var v2=document.createElement("br")
+        if(i.value!=''){
+           v3.innerHTML=i.value+"<Button onclick='remove(event)' >Delete</Button>"
+        v1.append(v3)
+        ul.append(v1)
+        }
+        i.value=''
+
+    }
+    function remove(event){
+        event.target.parentElement.remove()
+    }
+</script>
+
+</body>
+</html>
